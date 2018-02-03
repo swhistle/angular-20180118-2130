@@ -6,26 +6,25 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  public title = 'Hello,';
-  public user = {
-    name: 'John'
-  };
-  public myClass = 'red';
-  public myColor = 'red';
 
-  constructor() {
-    setTimeout(_ => {
-      this.title = 'Hi, ';
-      this.myClass = 'green';
-    }, 2000);
-  }
+  public Users = [
+    {
+      name: "Чапаев Василий Иванович",
+      position: "Ведущий инженер",
+      avatar: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample4.jpg"
+    },
+    {
+      name: "Анка",
+      position: "Пулеметчица",
+      avatar: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample2.jpg"
+    },
+    {
+      name: "Ржевский",
+      position: "Поручик",
+      avatar: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample5.jpg"
+    }
+  ]
 
-  random() {
-    return Math.random();
-  }
-
-  changeColor(color: string) {
-     this.myColor = color;
-  }
+  constructor() {}
 
 }
