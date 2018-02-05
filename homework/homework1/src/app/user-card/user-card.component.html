@@ -1,13 +1,12 @@
-<div *ngFor="let user of Users; let i = index" class="user-card" [style.backgroundColor] = userBackgroundColor[i]>
+<div class="user-card" [style.backgroundColor] = userBackgroundColor>
   <div class="user-about">
     <div class="img-container">
-      <img [src]="user.avatar" alt="profile">
+      <img [src]="userCard.avatar" alt="profile">
     </div>
     <div class="user-info">
-      <h3>{{user.name}}</h3>
-      <span>должность: {{user.position}}</span>
+      <h3>{{userCard.name}}</h3>
+      <span>должность: {{userCard.position}}</span>
     </div>
   </div>
-  <button type="button" class="btn-more" (click)="changeColor(i)">Подробнее</button>
+  <button type="button" class="btn-more" (click)="changeColor()">Подробнее</button>
 </div>
-
