@@ -1,0 +1,26 @@
+.login-form {
+  width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  margin-top: 100px;
+  border: 1px solid #ccc;
+}
+
+.login-form.ng-valid {
+  border-color: #3faa4d;
+  background-color: rgba(170, 255, 170, 0.2);
+}
+
+.login-form input[type="text"],
+.login-form input[type="date"],
+.login-form input[type="email"] {
+  width: 75%;
+}
+
+.login-form-label {
+  display: block;
+}
+
+.login-form .ng-invalid.ng-dirty {
+  border-color: firebrick;
+}

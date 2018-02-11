@@ -1,1 +1,34 @@
-<input type="text" [FormControl]="nameControl">
+<form #form="ngForm" action="" [formGroup]="fullNameControl" class="login-form" (submit)="addUser()">
+  <p>
+    <label class="login-form-label">Имя</label>
+    <input type="text" formControlName="firstName">
+  </p>
+  <p>
+    <label class="login-form-label">Фамилия</label>
+    <input type="text" formControlName="lastName">
+  </p>
+  <p>
+    <label class="login-form-label">Пол</label>
+    <label>
+      <input type="radio" formControlName="sex" value="1">
+      Мужской
+    </label>
+    <label>
+      <input type="radio" formControlName="sex" value="0">
+      Женский
+    </label>
+  </p>
+  <p>
+    <label class="login-form-label">Дата рождения</label>
+    <input type="date" formControlName="dateOfBirth">
+  </p>
+  <p>
+    <label class="login-form-label">E-mail</label>
+    <input type="email" formControlName="email">
+  </p>
+  <button type="submit" [disabled]="!form.valid">Зарегистрироваться</button>
+</form>
+
+<div *ngIf="form.valid">
+  User!
+</div>
