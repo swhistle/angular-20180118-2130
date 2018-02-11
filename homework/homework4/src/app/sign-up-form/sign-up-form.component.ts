@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
-  selector: 'app-login-form',
-  templateUrl: './login-form.component.html',
-  styleUrls: ['./login-form.component.css']
+  selector: 'sign-up-form',
+  templateUrl: './sign-up-form.component.html',
+  styleUrls: ['./sign-up-form.component.css']
 })
-export class LoginFormComponent implements OnInit {
+export class SignUpFormComponent implements OnInit {
 
   fullNameControl: FormGroup;
 
@@ -68,12 +68,12 @@ function ageValidator() {
     if(dateToday.getFullYear() - dateOfBirth.getFullYear() < 18) {
       return { ageValidator: { message: 'Should be elder than 18'} };
     } else if(dateToday.getFullYear() - dateOfBirth.getFullYear() === 18) {
-        if(dateToday.getMonth() < dateOfBirth.getMonth()) {
-          return { ageValidator: { message: 'Should be elder than 18'} };
-        } else if( (dateToday.getMonth() === dateOfBirth.getMonth()) && ( dateToday.getDate() < dateOfBirth.getDate() ) ) {
-          return { ageValidator: { message: 'Should be elder than 18'} };
-        }
-        return null;
+      if(dateToday.getMonth() < dateOfBirth.getMonth()) {
+        return { ageValidator: { message: 'Should be elder than 18'} };
+      } else if( (dateToday.getMonth() === dateOfBirth.getMonth()) && ( dateToday.getDate() < dateOfBirth.getDate() ) ) {
+        return { ageValidator: { message: 'Should be elder than 18'} };
+      }
+      return null;
     }
     return null;
   };

@@ -1,14 +1,15 @@
-<form #form="ngForm" action="" [formGroup]="fullNameControl" class="login-form" (submit)="addUser()">
+<h3>Зарегистрироваться в системе</h3>
+<form #form="ngForm" action="" [formGroup]="fullNameControl" class="sign-up-form" (submit)="addUser()">
   <p>
-    <label class="login-form-label">Имя</label>
+    <label class="sign-up-form-label">Имя</label>
     <input type="text" formControlName="firstName">
   </p>
   <p>
-    <label class="login-form-label">Фамилия</label>
+    <label class="sign-up-form-label">Фамилия</label>
     <input type="text" formControlName="lastName">
   </p>
   <p>
-    <label class="login-form-label">Пол</label>
+    <label class="sign-up-form-label">Пол</label>
     <label>
       <input type="radio" formControlName="sex" value="1">
       Мужской
@@ -19,11 +20,11 @@
     </label>
   </p>
   <p>
-    <label class="login-form-label">Дата рождения</label>
+    <label class="sign-up-form-label">Дата рождения</label>
     <input type="date" formControlName="dateOfBirth">
   </p>
   <p>
-    <label class="login-form-label">E-mail</label>
+    <label class="sign-up-form-label">E-mail</label>
     <input type="email" formControlName="email">
   </p>
   <button type="submit" [disabled]="!form.valid">Зарегистрироваться</button>
