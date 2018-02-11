@@ -29,6 +29,11 @@
   <button type="submit" [disabled]="!form.valid">Зарегистрироваться</button>
 </form>
 
-<div *ngIf="form.valid">
-  User!
+<div>
+  <span>Список пользователей:</span>
+  <ul>
+    <li *ngFor="let user of userList">
+      {{user.firstName}} {{user.lastName}}
+    </li>
+  </ul>
 </div>

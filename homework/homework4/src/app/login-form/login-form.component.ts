@@ -10,11 +10,9 @@ export class LoginFormComponent implements OnInit {
 
   fullNameControl: FormGroup;
 
-  constructor() { }
+  public userList: Array<TUser> = [];
 
-  addUser() {
-    alert("hello!");
-  }
+  constructor() { }
 
   ngOnInit() {
     this.fullNameControl = new FormGroup({
@@ -27,6 +25,29 @@ export class LoginFormComponent implements OnInit {
 
     this.fullNameControl.valueChanges.subscribe((value) => console.log(value));
     this.fullNameControl.statusChanges.subscribe((status) => console.log(status));
+  }
+
+  addUser() {
+    const currentUser = {
+      firstName: this.fullNameControl.controls.firstName.value,
+      lastName: this.fullNameControl.controls.lastName.value,
+      sex: this.fullNameControl.controls.sex.value,
+      dateOfBirth: this.fullNameControl.controls.dateOfBirth.value,
+      email: this.fullNameControl.controls.email.value
+    };
+
+    let equivalentUser: boolean = false;
+    this.userList.forEach((userItem) => {
+      if(userItem.email === currentUser.email) {
+        return equivalentUser = true;
+      }
+    });
+
+    if(equivalentUser) {
+      alert('Пользователь с таким e-mail уже зарегистрирован!');
+      return;
+    }
+    this.userList.push(currentUser);
   }
 }
 
@@ -56,4 +77,12 @@ function ageValidator() {
     }
     return null;
   };
+}
+
+type TUser = {
+  firstName: string,
+  lastName: string,
+  sex: string,
+  dateOfBirth: string,
+  email: string
 }
