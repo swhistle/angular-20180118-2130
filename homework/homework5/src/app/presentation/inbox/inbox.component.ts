@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-inbox',
@@ -9,6 +10,7 @@ import { AuthService } from '../../services/auth.service';
 export class InboxComponent implements OnInit {
 
   constructor(
+    private _router: Router,
     private _authService: AuthService
   ) { }
 
@@ -41,5 +43,6 @@ export class InboxComponent implements OnInit {
 
   readLetter(index) {
     console.log(index + 1);
+    this._router.navigateByUrl(`mail/${index + 1}`);
   }
 }

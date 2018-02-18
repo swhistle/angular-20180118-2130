@@ -12,6 +12,7 @@ import { UserListService } from './services/user-list.service';
 import { AuthService } from './services/auth.service';
 import { InboxComponent } from './presentation/inbox/inbox.component';
 import { ComposeComponent } from './presentation/compose/compose.component';
+import { LetterComponent } from './presentation/letter/letter.component';
 
 const routes = [
   {
@@ -30,6 +31,10 @@ const routes = [
       {
         path: 'compose',
         component: ComposeComponent
+      },
+      {
+        path: ':letterId',
+        component: LetterComponent
       }
     ]
   }
@@ -41,7 +46,8 @@ const routes = [
     LoginComponent,
     EmailComponent,
     InboxComponent,
-    ComposeComponent
+    ComposeComponent,
+    LetterComponent
   ],
   imports: [
     BrowserModule,

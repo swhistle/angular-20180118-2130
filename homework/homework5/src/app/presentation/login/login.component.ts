@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
       password: new FormControl('',[Validators.required, Validators.minLength(6)])
     });
 
-    this.loginControl.valueChanges.subscribe((value) => console.log(value));
+    // this.loginControl.valueChanges.subscribe((value) => console.log(value));
     this.loginControl.statusChanges.subscribe((status) => console.log(status));
   }
 
