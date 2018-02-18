@@ -14,6 +14,8 @@ export class EmailComponent implements OnInit {
     private _authService: AuthService
   ) { }
 
+  private _userEmail = this._authService.userEmail;
+
   ngOnInit() {
   }
 

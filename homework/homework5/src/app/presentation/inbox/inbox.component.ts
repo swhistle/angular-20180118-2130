@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-inbox',
@@ -7,7 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InboxComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private _authService: AuthService
+  ) { }
+
+  private _userName = this._authService.userName;
+  private _userId = this._authService.userId;
 
   letters = [
     {
@@ -23,7 +29,9 @@ export class InboxComponent implements OnInit {
       letterList: [
         'letter 4',
         'letter 5',
-        'letter 6'
+        'letter 6',
+        'letter 7',
+        'letter 8'
       ]
     }
   ];
