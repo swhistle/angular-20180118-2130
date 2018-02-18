@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
+import { LetterListService } from '../../services/letter-list.service';
 
 @Component({
   selector: 'app-inbox',
@@ -11,38 +12,20 @@ export class InboxComponent implements OnInit {
 
   constructor(
     private _router: Router,
-    private _authService: AuthService
+    private _authService: AuthService,
+    private _letterListService: LetterListService
   ) { }
 
   private _userName = this._authService.userName;
   private _userId = this._authService.userId;
 
-  letters = [
-    {
-      id: 0,
-      letterList: [
-        'letter 1',
-        'letter 2',
-        'letter 3'
-      ]
-    },
-    {
-      id: 1,
-      letterList: [
-        'letter 4',
-        'letter 5',
-        'letter 6',
-        'letter 7',
-        'letter 8'
-      ]
-    }
-  ];
+  private _letters = this._letterListService.letters;
 
   ngOnInit() {
   }
 
   readLetter(index) {
-    console.log(index + 1);
+    this._letterListService.setLetterId(index);
     this._router.navigateByUrl(`mail/${index + 1}`);
   }
 }

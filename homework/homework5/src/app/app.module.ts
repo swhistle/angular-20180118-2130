@@ -13,6 +13,7 @@ import { AuthService } from './services/auth.service';
 import { InboxComponent } from './presentation/inbox/inbox.component';
 import { ComposeComponent } from './presentation/compose/compose.component';
 import { LetterComponent } from './presentation/letter/letter.component';
+import { LetterListService } from './services/letter-list.service';
 
 const routes = [
   {
@@ -55,7 +56,7 @@ const routes = [
     ReactiveFormsModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [AppValidatorService, UserListService, AuthService, AuthGuard],
+  providers: [AppValidatorService, UserListService, LetterListService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
