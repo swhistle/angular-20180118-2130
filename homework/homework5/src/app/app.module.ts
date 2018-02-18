@@ -11,6 +11,7 @@ import { AppValidatorService } from './services/app-validator.service';
 import { UserListService } from './services/user-list.service';
 import { AuthService } from './services/auth.service';
 import { InboxComponent } from './presentation/inbox/inbox.component';
+import { ComposeComponent } from './presentation/compose/compose.component';
 
 const routes = [
   {
@@ -20,7 +21,17 @@ const routes = [
   {
     path: 'mail',
     canActivate: [AuthGuard],
-    component: EmailComponent
+    component: EmailComponent,
+    children: [
+      {
+        path: '',
+        component: InboxComponent
+      },
+      {
+        path: 'compose',
+        component: ComposeComponent
+      }
+    ]
   }
 ];
 
@@ -29,7 +40,8 @@ const routes = [
     AppComponent,
     LoginComponent,
     EmailComponent,
-    InboxComponent
+    InboxComponent,
+    ComposeComponent
   ],
   imports: [
     BrowserModule,

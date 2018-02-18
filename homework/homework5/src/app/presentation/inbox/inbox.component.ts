@@ -39,4 +39,7 @@ export class InboxComponent implements OnInit {
   ngOnInit() {
   }
 
+  readLetter(index) {
+    console.log(index + 1);
+  }
 }

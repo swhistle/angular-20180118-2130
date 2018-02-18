@@ -26,5 +26,4 @@ export class EmailComponent implements OnInit {
       this._router.navigateByUrl('/');
     }
   }
-
 }
