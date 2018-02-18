@@ -12,4 +12,8 @@ export class ComposeComponent implements OnInit {
   ngOnInit() {
   }
 
+  send() {
+    console.log('Отправлено');
+  }
+
 }
